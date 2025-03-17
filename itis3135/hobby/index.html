@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="itis3135/styles/default.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erica Phann's Hobby Page</title>
@@ -52,7 +51,16 @@
         .active{
             display: block;
         }
+
+        nav span{
+            display: inline-block;
+        }
 	</style>
+    <script>
+        document.getElementById("validation-link-html").setAttribute("href","https://validator.w3.org/check?uri=" + location.href);
+        document.getElementById("validation-link-css").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+    </script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -74,23 +82,23 @@
         </section>
 
         <section id="about">
-
+            <h2>About Robotics!</h2>
         </section>
         
         <section id="when">
-
+            <h2>When did I do Robotics?</h2>
         </section>
 
         <section id ="where">
-
+            <h2>Where did I compete?</h2>
         </section>
 
         <section id="how">
-
+            <h2>How did we do it?</h2>
         </section>
 
         <section id="why">
-
+            <h2>Why did I do it?</h2>
         </section>
 
     </main>
