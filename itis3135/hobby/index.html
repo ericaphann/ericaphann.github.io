@@ -40,8 +40,6 @@
 			margin-left: auto;
 			margin-right: auto;
 			text-align: center;
-    		max-width: 400px;
-			max-height: 300px;
 		}
 		.caption{
 			text-align: center;
@@ -54,7 +52,24 @@
 
         nav span{
             display: inline-block;
+            padding: 0 10px;
+            border-right: 1px solid black;
         }
+
+        nav span:last-child {
+        border-right: none;
+        }
+
+        section{
+            display: none;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+
+
+        
 	</style>
     <script>
         document.getElementById("validation-link-html").setAttribute("href","https://validator.w3.org/check?uri=" + location.href);
@@ -67,26 +82,51 @@
         <h1 class="title">Robotics</h1>
         <nav>
             <span><a onclick="showSection('home')">Home</a></span>
-            <span><a onclick="showSection('about')">About Robotics</a></span>
+            <span><a onclick="showSection('about')">About Avian Robotics</a></span>
             <span><a onclick="showSection('when')">Best Times</a></span>
-            <span><a onclick="showSection('where')">Where did I attend</a></span>
+            <span><a onclick="showSection('where')">Where I attended</a></span>
             <span><a onclick="showSection('how')">What You Need Join</a></span>
             <span><a onclick="showSection('why')">Why You Should Join</a></span>     
         </nav>
     </header>
     <main>
         <section id="home" class = "active">
-            <h2>This is my Hobby Page!</h2>
-            <h3>What is Robotics?</h3>
-            <p></p>
+            <h2>What is FIRST Robotics?</h2>
+            <p>FIRST Robotics, also known as For Inspiration and Recognition of Science and Technology, 
+                is a robotics competition that allows students to show their creative minds in creating robots to achieve different goals and objectives. 
+                It's a global competition to help inspire students to spark creativity and innovation. Different schools can participate and compete against each other, 
+                gaining valuable experience in business, technology, and teamwork</p>
+            <figure>
+                <img class="image" src="images/FIRST_Logo.svg.png" alt="FIRST_Logo">
+                <figcaption><i>FIRST Robotics Logo</i></figcaption>
+            </figure>
+            <p>FIRST has multiple different competitions for high school and middle school students, FIRST Tech Challenge, FIRST Robotics, and FIRST Lego League. 
+                Each competition has their own goals, challenges and objectives.</p>
+            <p><a class ="link" href="https://www.firstinspires.org/">First Robotics Website</a></p>
+            <p><a class ="link" href="https://www.thebluealliance.com/team/9005">My Team's Website</a></p>
+            
         </section>
 
         <section id="about">
-            <h2>About Robotics!</h2>
+            <h2>About My Team!</h2>
+            <p>My robotics team is Avian Robotics 9005. It was founded in 2022 at East Mecklenburg High School. 
+                We were a team of around 10-15 people with a mix of juniors and seniors, and only 3 girls. 
+                We focused on challenging ourselves to new things and learning. 
+                As a rookie team we were new to everything and got mentoring and help from our mentor team Yeti Robotics.</p>
+            <figure>
+                <img class="image" src="images/team1.jpg" alt="team photo 1">
+                <figcaption><i>Team photo after a competition</i></figcaption>
+            </figure>
+            <figure>
+                <img class="image" src="images/team2.jpg" alt="team photo 2">
+                <figcaption><i>Photo of all the different Charlotte Teams</i></figcaption>
+            </figure>
         </section>
         
         <section id="when">
             <h2>When did I do Robotics?</h2>
+            <h2>Best Memories</h2>
+            <p></p>
         </section>
 
         <section id ="where">
@@ -106,21 +146,8 @@
         
 
     <footer>
-        <nav>
-            <a class="link" href = "https://webpages.charlotte.edu/ephann1/">CLT Web</a> 
-            ||
-            <a class="link" href = "https://github.com/ericaphann/">GitHub</a> 
-            ||
-            <a class="link" href = "https://ericaphann.github.io/">GitHub Page</a> 
-            || 
-            <a class="link" href = "https://www.freecodecamp.org/EricaPhann">FreeCodeCamp</a> 
-            ||
-            <a class="link" href = "https://www.codecademy.com/profiles/EricaPhann">Codecademy</a> 
-            ||
-            <a class="link" href = "https://www.linkedin.com/in/ericaphann">LinkedIn</a> 
-            
-        </nav>
-        <p>Designed by <a class = "link" href="itis3135/epicpenguindesigns.com/index.html">Erica Phann's Designs, </a><a class = "link" href="https://www.freecodecamp.org/certification/EricaPhann/responsive-web-design"><i>Certified in Responsive Web Design</i></a> © 2025</p>
+        
+        <p>Designed by <a class = "link" href="../epicpenguindesigns.com/index.html">Erica Phann's Designs, </a><a class = "link" href="https://www.freecodecamp.org/certification/EricaPhann/responsive-web-design"><i>Certified in Responsive Web Design</i></a> © 2025</p>
     </footer>
     
 </body>
