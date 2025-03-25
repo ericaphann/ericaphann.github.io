@@ -44,25 +44,24 @@ h2{
 }
 
 /* MOBILE RULES */
-/* Remove Initial */
-html, body {
-    color:blue;
-    background-color: beige;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    font-family:sans-serif;
-}
-/* Foundational Three */
-main, .maincontainer {
-    width: 95%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
 /* Rule Overrides For Laptops / Small Screens */
 @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
     #colorbox {
         background-color:yellow;
+    }
+    html, body {
+        color:blue;
+        background-color: beige;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        font-family:sans-serif;
+    }
+    /* Foundational Three */
+    main, .maincontainer {
+        width: 95%;
+        margin: 0 auto;
+        max-width: fit-content;
     }
 }
 /* Rule Overrides For Tablet Devices */
@@ -70,10 +69,38 @@ main, .maincontainer {
     #colorbox {
         background-color:orange;
     }
+    html, body {
+        color:blue;
+        background-color: beige;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        font-family:sans-serif;
+    }
+    /* Foundational Three */
+    main, .maincontainer {
+        width: 95%;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
 }
 /* Rule Overrides For Mobile Devices */
 @media screen and ( min-width: 370px ) and ( max-width: 600px ) {
     #colorbox {
         background-color:red;
+    }
+    html, body {
+        color:blue;
+        background-color: beige;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        font-family:sans-serif;
+    }
+    /* Foundational Three */
+    main, .maincontainer {
+        width: 95%;
+        margin: 0 auto;
+        max-width: fit-content;
     }
 }
