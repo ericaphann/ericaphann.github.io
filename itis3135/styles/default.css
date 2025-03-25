@@ -43,6 +43,13 @@ h2{
     margin-left: 15%;
 }
 
+
+main, .maincontainer {
+    width: 95%;
+    margin: 0 auto;
+    max-width: fit-content;
+}
+
 /* MOBILE RULES */
 /* Rule Overrides For Laptops / Small Screens */
 @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
@@ -61,7 +68,7 @@ h2{
     main, .maincontainer {
         width: 95%;
         margin: 0 auto;
-        max-width: fit-content;
+        max-width: 1400px;
     }
 }
 /* Rule Overrides For Tablet Devices */
@@ -81,7 +88,7 @@ h2{
     main, .maincontainer {
         width: 95%;
         margin: 0 auto;
-        max-width: fit-content;
+        max-width: 980px;
     }
 }
 /* Rule Overrides For Mobile Devices */
@@ -101,6 +108,6 @@ h2{
     main, .maincontainer {
         width: 95%;
         margin: 0 auto;
-        max-width: fit-content;
+        max-width: 600px;
     }
 }
