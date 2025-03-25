@@ -33,3 +33,12 @@ h2{
 .bio{
     text-align: left;
 }
+
+.web-link{
+    color:rgb(221, 25, 7);
+}
+
+.webeval{
+    text-align: left;
+    margin-left: 15%;
+}
