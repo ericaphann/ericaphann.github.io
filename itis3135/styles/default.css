@@ -57,7 +57,7 @@ main, .maincontainer {
         background-color:yellow;
     }
     html, body {
-        color:blue;
+        color:#166b8d;
         background-color: beige;
         height: 100%;
         display: flex;
