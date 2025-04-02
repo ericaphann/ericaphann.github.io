@@ -14,7 +14,157 @@
     </header>
     <main>
         <h2>Tables Page</h2>
-        <p>This is all the content for my ITIS 3135 class</p>
+        <h3>My Tabular Data</h3>
+        <ol class="table">
+            <li>Erica Phann - ephann1@charlotte.edu - 10000</li>
+            <li>Eric Phann - ephann@charlotte.edu - 100000</li>
+            <li>Monica Phann - mphann@charlotte.edu - 15000</li>
+            <li>John Smith - jsmith@charlotte.edu - 200000</li>
+            <li>Peter Long - plong@charlotte.edu - 29000</li>
+            <li>Muha Green - mgreen@charlotte.edu - 50000</li>
+            <li>Amira Hassan - ahassan@charlotte.edu - 205000</li>
+        </ol>
+        <h3>Employee Data in Simple Table</h3>
+        <figure>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Years of Service</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Erica</td>
+                        <td>ephann1@charlotte.edu</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Eric</td>
+                        <td>ephann@charlotte.edu</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Monica</td>
+                        <td>mphann@charlotte.edu</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>jsmith@charlotte.edu</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Peter</td>
+                        <td>plong@charlotte.edu</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>Muha</td>
+                        <td>mgreen@charlotte.edu</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>Amira</td>
+                        <td>ahassan@charlotte.edu</td>
+                        <td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+
+        <h3>Employee Data in Complex Table</h3>
+        <figure>
+            <figcaption>Employee Information</figcaption>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Department</td>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Years of Service</td>
+                        <td>Monthly Salary</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Marketing</td>
+                        <td>Erica</td>
+                        <td>ephann1@charlotte.edu</td>
+                        <td>2</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <td>Eric</td>
+                        <td>ephann@charlotte.edu</td>
+                        <td>5</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Sales</td>
+                        <td>Monica</td>
+                        <td>mphann@charlotte.edu</td>
+                        <td>2</td>
+                        <td>750</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>jsmith@charlotte.edu</td>
+                        <td>25</td>
+                        <td>600</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Technology</td>
+                        <td>Peter</td>
+                        <td>plong@charlotte.edu</td>
+                        <td>29</td>
+                        <td>299</td>
+                    </tr>
+                    <tr>
+                        <td>Muha</td>
+                        <td>mgreen@charlotte.edu</td>
+                        <td>18</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>    
+                        <td>Accountant</td>
+                        <td>Amira</td>
+                        <td>ahassan@charlotte.edu</td>
+                        <td>30</td>
+                        <td>900</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total Years of Service/Monthly Salary</td>
+                        <td id="total-years">0</td>
+                        <td id="total-salary">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+
+        <script>
+            function calculateTotals() {
+                let yearsTotal = 0, salaryTotal = 0;
+                const rows = document.querySelectorAll("tbody tr");
+        
+                // Loop through all rows EXCEPT the last row (total row)
+                for (let i = 0; i < rows.length - 1; i++) {
+                    const cells = rows[i].cells;
+                    const years = cells[3] ? parseInt(cells[3].textContent.trim(), 10) || 0 : 0;
+                    const salary = cells[4] ? parseInt(cells[4].textContent.trim(), 10) || 0 : 0;
+        
+                    yearsTotal += years;
+                    salaryTotal += salary;
+                }
+        
+                document.getElementById("total-years").textContent = yearsTotal;
+                document.getElementById("total-salary").textContent = salaryTotal.toLocaleString();
+            }
+        
+            document.addEventListener("DOMContentLoaded", calculateTotals);
+        </script>
+
     </main>
 
         

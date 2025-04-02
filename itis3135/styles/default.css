@@ -50,6 +50,7 @@ main, .maincontainer {
     max-width: fit-content;
 }
 
+
 /* MOBILE RULES */
 /* Rule Overrides For Laptops / Small Screens */
 @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
@@ -124,4 +125,38 @@ button{
     margin-bottom: 2%;
     background-color: brown;
     color:rgb(240, 212, 176);
+}
+
+.table{
+    text-align: left;
+}
+
+ol {
+    padding-left: 75px;
+    list-style-position: inside;
+}
+th {
+    background-color: #b44658;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+thead tr {
+    background-color: #b44658;
+    color: white;
+}
+/* Alternating row colors */
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+tbody tr:nth-child(even) {
+    background-color: #efd9e8;
+}
+/* Borders and padding */
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
 }
