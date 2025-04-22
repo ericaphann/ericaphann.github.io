@@ -33,47 +33,60 @@
             <br>
 
             <label for="personalb">Personal Background</label>
-            <input type="text" id="personalb" name="personalb" placeholder="A Twin!" required>
+            <textarea id="personalb" name="personalb" rows="3" placeholder="I am currently 20 years old and attending university. 
+            In my freetime I like to play rhythm games, play with my dogs, and play some sports!" required></textarea>
             <br>
 
             <label for="professionalb">Professional Background:</label>
-            <input type="text" id="professionalb" name="professionalb" placeholder="Intern at EPRI" required>
+            <textarea id="professionalb" name="professionalb" rows="3" placeholder="Recently I have accepted and internship position at EPRI as a web developer. 
+            Hopefully I can learn a lot from the experience and put my web development experience to use!" required></textarea>
             <br>
 
             <label for="academicb">Academic Background:</label>
-            <input type="text" id="academicb" name="academicb" placeholder="Junior Studying CS" required>
+            <textarea id="academicb" name="academicb" rows="3" placeholder="Currently I am a junior studying Computer Science at the University of North Carolina." required></textarea>
             <br>
 
             <label for="background">Background in Web Development:</label>
-            <input type="text" id="background" name="background" placeholder="WebDev intern at EPRI" required>
+            <textarea id="background" name="background" rows="3" placeholder="I have a few hackathons where I developed front end product. 
+            Other than that, this class is the most experience I currently have. " required></textarea>
             <br>
 
             <label for="platform">Primary Computer Platform:</label>
             <input type="text" id="platform" name="platform" placeholder="Computer (Windows)" required>
             <br>
 
-            <legend>Enter Your Current Courses</legend>
+            <label>Enter Your Current Courses</label>
             <div id="course-fields"></div>
             <div class="form-buttons">
                 <button type="button" onclick="addCourse()">Add Course</button>
             </div>
-
-            <label for="platform">Primary Computer Platform:</label>
-            <input type="text" id="platform" name="platform" placeholder="Computer (Windows)" required>
-            <br>
             
-            <fieldset>
-                <legend>Something funny or interesting:</legend>
-                <input type="radio" id="contact-email" name="contact-method" value="email">
-                <label for="contact-email">Email</label>
-                <input type="radio" id="contact-phone" name="contact-method" value="phone">
-                <label for="contact-phone">Phone</label>
-            </fieldset>
+            <label for="funny">Anything funny or interesting</label>
+            <input type="text" id="funny" name="funny" placeholder="I have a twin sister!">
             <br>
 
-            <button type="reset" class="forms-button">Reset</button>
-            <button type="submit" class="forms-button">Submit</button>
+            <label for="else">Anything else?</label>
+            <input type="text" id="else" name="else" placeholder="I have two cute dogs!">
+            <br>
+
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">I understand that what is on this page is not password protected and I will not put anything here that I don't want publicly available.</label>
+            </div>
+
+            
+            <div class="form-buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+
         </form>
+
+        <div id="result-container" style="display: none;">
+            <div id="intro-content"></div>
+            <button id="reset-btn">Reset</button>
+        </div>
 
         <script>
             const courseFields = document.getElementById('course-fields');
