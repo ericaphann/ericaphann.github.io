@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles/default.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erica Phann's Epic Penguin||ITIS 3135||Build Your Own Introduction</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1> Erica Phann's Epic Penguin || ITIS 3135</h1>
+        <div data-include="components/header.html"></div>
+    </header>
+    <main>
+        <h2>ITIS 3135 || Build Your Own Introduction</h2>
+        <h3>Time to build your own intro page, please fill out the form below so we can create your own page.</h3>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Erica" required>
+            <br>
+
+            <label for="mascot">Mascot:</label>
+            <input type="text" id="mascot" name="mascot" placeholder="Penguin" required>
+            <br>
+
+            <label for="image">Image of yourself:</label>
+            <input type="file" id="image" name="image" accept=".png, .jpg" required>
+            <br>
+
+            <label for="caption">Image Caption:</label>
+            <input type="text" id="caption" name="caption" placeholder="This is an image of me!" required>
+            <br>
+
+            <label for="personalb">Personal Background</label>
+            <input type="text" id="personalb" name="personalb" placeholder="A Twin!" required>
+            <br>
+
+            <label for="professionalb">Professional Background:</label>
+            <input type="text" id="professionalb" name="professionalb" placeholder="Intern at EPRI" required>
+            <br>
+
+            <label for="academicb">Academic Background:</label>
+            <input type="text" id="academicb" name="academicb" placeholder="Junior Studying CS" required>
+            <br>
+
+            <label for="background">Background in Web Development:</label>
+            <input type="text" id="background" name="background" placeholder="WebDev intern at EPRI" required>
+            <br>
+
+            <label for="platform">Primary Computer Platform:</label>
+            <input type="text" id="platform" name="platform" placeholder="Computer (Windows)" required>
+            <br>
+
+            <legend>Enter Your Current Courses</legend>
+            <div id="course-fields"></div>
+            <div class="form-buttons">
+                <button type="button" onclick="addCourse()">Add Course</button>
+            </div>
+
+            <label for="platform">Primary Computer Platform:</label>
+            <input type="text" id="platform" name="platform" placeholder="Computer (Windows)" required>
+            <br>
+            
+            <fieldset>
+                <legend>Something funny or interesting:</legend>
+                <input type="radio" id="contact-email" name="contact-method" value="email">
+                <label for="contact-email">Email</label>
+                <input type="radio" id="contact-phone" name="contact-method" value="phone">
+                <label for="contact-phone">Phone</label>
+            </fieldset>
+            <br>
+
+            <button type="reset" class="forms-button">Reset</button>
+            <button type="submit" class="forms-button">Submit</button>
+        </form>
+
+        <script>
+            const courseFields = document.getElementById('course-fields');
+        
+            function addCourse() {
+              const wrapper = document.createElement('div');
+              wrapper.className = 'course-field';
+        
+              const input = document.createElement('input');
+              input.type = 'text';
+              input.name = 'courses[]';
+              input.placeholder = 'Enter course name';
+              input.required = true;
+        
+              const deleteBtn = document.createElement('button');
+              deleteBtn.type = 'button';
+              deleteBtn.textContent = 'Delete';
+              deleteBtn.onclick = () => courseFields.removeChild(wrapper);
+        
+              wrapper.appendChild(input);
+              wrapper.appendChild(deleteBtn);
+        
+              courseFields.appendChild(wrapper);
+            }
+          </script>
+    </main>
+
+        
+
+    <footer>
+        <div data-include="components/footer.html"></div>
+    </footer>
+
+    <script src="scripts/HTMLInclude.min.js"></script>
+</body>
+
+</html>
