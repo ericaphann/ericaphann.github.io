@@ -44,28 +44,43 @@ document.addEventListener("DOMContentLoaded", () => {
         const reader = new FileReader();
         reader.onload = function(event) {
             const imageURL = event.target.result;
-    
+        
             let html = `
-                <h3>${name}’s Introduction</h3>
-                <p><strong>Mascot:</strong> ${mascot}</p>
-                <p><img src="${imageURL}" alt="Uploaded image of ${name}" style="max-width:200px;"></p>
-                <p><em>${caption}</em></p>
-                <p><strong>Personal Background:</strong> ${personalb}</p>
-                <p><strong>Professional Background:</strong> ${professionalb}</p>
-                <p><strong>Academic Background:</strong> ${academicb}</p>
-                <p><strong>Web Dev Background:</strong> ${background}</p>
-                <p><strong>Platform:</strong> ${platform}</p>
-                <p><strong>Current Courses:</strong></p>
-                <ul>${courses.map((course) => `<li>${course}</li>`).join("")}</ul>
-                <p><strong>Funny/Interesting:</strong> ${funny}</p>
-                <p><strong>Anything else:</strong> ${elseText}</p>
+                <h2>ITIS 3135 Introduction</h2>
+                <h3>${name} || ${mascot}</h3>
+                <div class="centered-box">
+                    <figure>
+                        <img src="${imageURL}" alt="User uploaded image: ${caption}">
+                        <figcaption class="caption">${caption}</figcaption>
+                    </figure>
+                    <ul class="bullets">
+                        <li><strong>Personal Background:</strong> ${personalb}</li>
+                        <li><strong>Professional Background:</strong> ${professionalb}</li>
+                        <li><strong>Academic Background:</strong> ${academicb}</li>
+                        <li><strong>Background in this Subject:</strong> ${background}</li>
+                        <li><strong>Primary Computer Platform:</strong> ${platform}</li>
+                    </ul>
+                    <ul class="bullets">
+                        <li><strong>Courses Currently Taking:</strong>
+                            <ul>
+                                ${courses.length > 0 
+                                    ? courses.map((course) => `<li>${course}</li>`).join("")
+                                    : "<li>No courses listed.<br><br></li>"
+                                }
+                            </ul>
+                        </li>
+                        ${funny ? `<li><strong>Funny/Interesting thing about yourself:</strong> ${funny}</li>` : ""}
+                        ${elseText ? `<li><strong>Anything Else:</strong> ${elseText}</li>` : ""}
+                    </ul>
+                </div>
             `;
-    
+        
             form.style.display = "none";
             introContent.innerHTML = html;
             resultContainer.style.display = "block";
         };
-    
+        
+        
         if (imageFile && imageFile.type.startsWith("image/")) {
             reader.readAsDataURL(imageFile);
         } else {
