@@ -56,17 +56,17 @@
             <br>
 
             <label>Enter Your Current Courses</label>
-            <div id="course-fields"></div>
+            <div id="course-container"></div>
             <div class="form-buttons">
                 <button type="button" onclick="addCourse()">Add Course</button>
             </div>
             
             <label for="funny">Anything funny or interesting</label>
-            <input type="text" id="funny" name="funny" placeholder="I have a twin sister!">
+            <textarea id="funny" name="funny" placeholder="I have a twin sister!"></textarea>  
             <br>
 
             <label for="else">Anything else?</label>
-            <input type="text" id="else" name="else" placeholder="I have two cute dogs!">
+            <textarea id="else" name="else" placeholder="I have two cute dogs!"></textarea>
             <br>
 
 
@@ -87,31 +87,6 @@
             <div id="intro-content"></div>
             <button id="reset-btn">Reset</button>
         </div>
-
-        <script>
-            const courseFields = document.getElementById('course-fields');
-        
-            function addCourse() {
-              const wrapper = document.createElement('div');
-              wrapper.className = 'course-field';
-        
-              const input = document.createElement('input');
-              input.type = 'text';
-              input.name = 'courses[]';
-              input.placeholder = 'Enter course name';
-              input.required = true;
-        
-              const deleteBtn = document.createElement('button');
-              deleteBtn.type = 'button';
-              deleteBtn.textContent = 'Delete';
-              deleteBtn.onclick = () => courseFields.removeChild(wrapper);
-        
-              wrapper.appendChild(input);
-              wrapper.appendChild(deleteBtn);
-        
-              courseFields.appendChild(wrapper);
-            }
-          </script>
     </main>
 
         
@@ -119,7 +94,7 @@
     <footer>
         <div data-include="components/footer.html"></div>
     </footer>
-
+    <script src="scripts/survey.js"></script>
     <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 
