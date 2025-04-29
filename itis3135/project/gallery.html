@@ -4,22 +4,42 @@
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thai, Laos, Cambodian Clothing</title>
+    <title>Southeast Asia's Traditional Clothing</title>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <script src="scripts/include.js"></script>
 </head>
 <body>
     <header>
-        <h1>Thai, Laos, Cambodian Clothing</h1>
+        <h1>Southeast Asia's Traditional Clothing</h1>
         <div data-include="components/header.html"></div>
     </header>
 
     <main>
-        <h2>Gallery</h2>
-        <h3>Traditional Men TLC Clothing</h3>
-        <p>Slideshow</p>
-        <h3>Traditional Women TLC Clothing</h3>
-        <p>Slideshow</p>
+        <section class="gallery-section">
+            <h2>Gallery</h2>
+          
+            <div class="gallery-flex">
+              <div class="gallery-subsection">
+                <h3>Traditional Men TLC Clothing</h3>
+                <div class="slideshow-container" id="men-slideshow">
+                  <img class="slide" src="images/lao2.png" alt="Laos Men's Clothing 1">
+                  <img class="slide" src="images/thai2.png" alt="Thai Men's Clothing 2">
+                  <img class="slide" src="images/cambodia2.png" alt="Cambodian Men's Clothing 3">
+                </div>
+              </div>
+          
+              <div class="gallery-subsection">
+                <h3>Traditional Women TLC Clothing</h3>
+                <div class="slideshow-container" id="women-slideshow">
+                  <img class="slide" src="images/lao1.png" alt="Laos Women's Clothing 1">
+                  <img class="slide" src="images/thai1.png" alt="Thai Women's Clothing 2">
+                  <img class="slide" src="images/cambodia1.png" alt="Cambodian Women's Clothing 3">
+                </div>
+              </div>
+            </div>
+        </section>
+          
+          
     </main>
 
     <footer>
@@ -27,5 +47,6 @@
     </footer>
 
     <script src="scripts/nav.js"></script> 
+    <script src="scripts/slideshow.js"></script>
 </body>
 </html>

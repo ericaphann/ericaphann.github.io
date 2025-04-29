@@ -4,19 +4,37 @@
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thai, Laos, Cambodian Clothing</title>
+    <title>Southeast Asia's Traditional Clothing</title>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <script src="scripts/include.js"></script>
 </head>
 <body>
     <header>
-        <h1>Thai, Laos, Cambodian Clothing</h1>
+        <h1>Southeast Asia's Traditional Clothing</h1>
         <div data-include="components/header.html"></div>
     </header>
 
     <main>
         <h2>Contact Form</h2>
-        <p>Form that asks user for information</p>
+
+        <form id="contactForm" onsubmit="handleFormSubmission(event)">
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+    
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+    
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+    
+            <input type="submit" value="Submit">
+        </form>
+
+        <div id="thankYouMessage" style="display:none;">
+            <h3>Thank you for submitting an inquiry!</h3>
+            <p>Your message has been received. We will get back to you shortly.</p>
+        </div>
+        
     </main>
 
     <footer>
@@ -24,5 +42,6 @@
     </footer>
 
     <script src="scripts/nav.js"></script> 
+    <script src="scripts/form.js"></script>
 </body>
 </html>

@@ -1,68 +1,444 @@
+/*Navigation*/
+nav {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  margin: 0 15px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+nav a:hover {
+  color: #7E916B;
+}
+.nav-icon {
+  margin-right: 8px;
+}
+.submenu, .subsubmenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  padding: 10px;
+  border-radius: 8px;
+}
+.nav-item {
+  position: relative;
+}
+.nav-item:hover .submenu {
+  display: block;
+  top: 40px;
+  left: 0;
+}
+.submenu a {
+  display: block;
+  margin: 10px 0;
+}
+.submenu .nav-item:hover .subsubmenu {
+  display: block;
+  top: 0;
+  left: 150px;
+}
+
+nav a.active {
+  color: #7E916B;
+  position: relative;
+}
+  
+nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #7E916B;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/*Body*/
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fafafa;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+  text-align: center; /* Centers text content */
+}
+
+header {
+  background-color: #fff;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #222;
+}
+
+/* Main Content */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: center; /* Ensures text inside main is centered */
+}
+
+h2 {
+  color: #444;
+  margin-top: 30px;
+  text-decoration: underline;
+}
+
+img {
+  width: 50%;
+  max-width: 800px;
+  margin: 10px auto;
+  border-radius: 6px;
+  display: block; /* Allows margin auto to center the image */
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 40px;
+}
+
+section {
+  padding: 40px 20px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.home-page section:nth-of-type(1) {
+  background-color: #fffdf5; /* Thailand */
+}
+
+.home-page section:nth-of-type(2) {
+  background-color: #fef6e4; /* Laos */
+}
+
+.home-page section:nth-of-type(3) {
+  background-color: #fbe4d8; /* Cambodia */
+}
+
+
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  nav {
-    background-color: white;
-    display: flex;
-    justify-content: center;
+}
+
+
+/*Introduction for client*/
+.intro-section {
+  background-color: #fff8f0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 900px;
+  flex-wrap: wrap;
+}
+
+.intro-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.intro-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+
+/* About Page Sections */
+/* More engaging section styling */
+.tlc-section,
+.tlc-clothing-section {
+  padding: 50px 40px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #fdfdfd, #f6f6f6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Paragraphs & bullets inside */
+.tlc-section p,
+.tlc-clothing-section p,
+.tlc-clothing-section li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* List styling for TLC Clothing */
+.tlc-clothing-section ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.tlc-clothing-section li::marker {
+  font-weight: bold;
+}
+
+
+.country {
+  background-color: #fdfdfd;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.country-name {
+  font-size: 1.5rem;
+  color: #333;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.country-description {
+  display: none;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.country:hover .country-name {
+  display: none;
+}
+
+.country:hover .country-description {
+  display: block;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*Gallery*/
+.gallery-section {
+  padding: 60px 20px;
+  background-color: #fffdf5;
+  text-align: center;
+}
+
+.gallery-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.gallery-subsection {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  animation: fadeSlide 1s ease-in-out;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*Buy Page*/
+.buy-page-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.store-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.store-links li {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.store-link {
+  text-decoration: none;
+  color: #7E916B;
+  font-weight: bold;
+  padding: 10px 15px;
+  background-color: #f0f8ff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.store-link:hover {
+  background-color: #7E916B;
+  color: white;
+}
+
+.final-note {
+  font-size: 1.1rem;
+  color: #777;
+  margin-top: 30px;
+}
+
+/*Header Style*/
+
+header{
+  background-color: #fef6e4;
+  padding: 40px 20px 20px;
+  color: #444;
+  font-size: 1rem;
+  margin-top: 60px;
+}
+
+/*Footer Style*/
+
+footer {
+  background-color: #fef6e4;
+  padding: 40px 20px 20px;
+  color: #444;
+  font-size: 1rem;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: left;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  color: #2a5d84;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #7E916B;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-top: 30px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
     align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  nav a {
-    text-decoration: none;
-    color: black;
-    margin: 0 15px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-  }
-  nav a:hover {
-    color: #4A90E2;
-  }
-  .nav-icon {
-    margin-right: 8px;
-  }
-  .submenu, .subsubmenu {
-    display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    padding: 10px;
-    border-radius: 8px;
-  }
-  .nav-item {
-    position: relative;
-  }
-  .nav-item:hover .submenu {
-    display: block;
-    top: 40px;
-    left: 0;
-  }
-  .submenu a {
-    display: block;
-    margin: 10px 0;
-  }
-  .submenu .nav-item:hover .subsubmenu {
-    display: block;
-    top: 0;
-    left: 150px;
+    text-align: center;
   }
 
-  nav a.active {
-    color: #4A90E2;
-    position: relative;
+  .footer-section {
+    margin-bottom: 30px;
   }
-  
-  nav a.active::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #4A90E2;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
+}
